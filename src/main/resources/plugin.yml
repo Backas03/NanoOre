@@ -1,0 +1,7 @@
+name: NanoOre
+version: @version@
+main: kr.backas.nanoore.NanoOre
+
+
+commands:
+  광산관리:
