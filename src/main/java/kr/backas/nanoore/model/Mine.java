@@ -68,7 +68,8 @@ public class Mine implements ConfigurationSerializable {
         int random = getRandomChance();
         for (String temp : chance.keySet()) {
             int c = chance.get(temp);
-            if (rate <= random && random < (rate += c)) {
+            rate += c;
+            if (rate >= random) {
                 key = temp;
                 break;
             }
@@ -86,7 +87,8 @@ public class Mine implements ConfigurationSerializable {
         random = getRandomChance();
         int index;
         for (index=0; index<rewards.size(); index++) {
-            if (rewards.get(index).getChance() >= random && rewards.get(index).getChance() < (rate += rewards.get(index).getChance())) break;
+            rate += rewards.get(index).getChance();
+            if (rate >= random) break;
         }
         player.getInventory().addItem(rewards.get(index-1).getItemStack());
         return true;
