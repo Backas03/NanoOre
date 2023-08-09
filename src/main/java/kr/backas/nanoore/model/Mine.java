@@ -24,6 +24,8 @@ public class Mine implements ConfigurationSerializable {
     private final Map<Block, Material> types = new HashMap<>();
     private final Map<Block, Byte> data = new HashMap<>();
 
+    public Mine() {}
+
     public Mine(Location pos1, Location pos2, String name, Map<String, List<MineReward>> rewards, int regenerate, Map<String, Integer> chance, List<String> type, String block) {
         this.pos1 = pos1;
         this.pos2 = pos2;
@@ -97,11 +99,7 @@ public class Mine implements ConfigurationSerializable {
     public int getRandomChance() {
         return (int) (Math.random() * 100);
     }
-
-
-    public Mine() {
-    }
-
+    
     public void addReward(String custom, MineReward reward) {
         rewards.putIfAbsent(custom, new ArrayList<>());
         rewards.get(custom).add(reward);
