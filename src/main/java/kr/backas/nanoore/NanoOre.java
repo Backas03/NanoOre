@@ -16,7 +16,6 @@ public final class NanoOre extends JavaPlugin {
         return instance;
     }
 
-
     @Override
     public void onEnable() {
         instance = this;
