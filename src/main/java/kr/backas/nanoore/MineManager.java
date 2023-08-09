@@ -16,18 +16,15 @@ import java.io.IOException;
 import java.util.*;
 
 public class MineManager {
-
+    
     private static final MineManager instance = new MineManager();
-
+    
     public static MineManager getInstance() {
         return instance;
     }
-
-
-    private MineManager() {
-
-    }
-
+    
+    private MineManager() {}
+    
     private final Map<UUID, Mine> playerSection = new HashMap<>();
     private final Map<String, Mine> sections = new HashMap<>();
 
@@ -175,5 +172,4 @@ public class MineManager {
     public File getFile() {
         return new File(getDataFolder(), "sections.yml");
     }
-
 }
