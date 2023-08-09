@@ -26,12 +26,6 @@ dependencies {
     compileOnly 'com.destroystokyo.paper:paper-api:1.12.2-R0.1-SNAPSHOT'
 }
 
-
-task copyJar(type: Copy) {
-    from jar
-    into 'C:\\Users\\User\\Desktop\\server\\1.12.2Rpg\\plugins'
-}
-
 processResources {
     from(sourceSets.main.resources.srcDirs) {
         filter ReplaceTokens, tokens: [version: version]
