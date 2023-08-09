@@ -10,7 +10,6 @@ import org.bukkit.event.player.PlayerInteractEvent;
 import org.bukkit.inventory.EquipmentSlot;
 
 public class SectionCreateListener implements Listener {
-
     @EventHandler
     public void onInteract(PlayerInteractEvent e) {
         try {
@@ -29,8 +28,6 @@ public class SectionCreateListener implements Listener {
                 }
                 e.setCancelled(true);
             }
-        } catch (Exception ignore) {
-
-        }
+        } catch (Exception ignore) { }
     }
 }
